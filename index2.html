@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <select id="nameFilter">
+        <option value="">Select a name</option>
+        <option value="Alice Smith">Alice Smith</option>
+        <option value="Bob Johnson">Bob Johnson</option>
+        <option value="Charlie Brown">Charlie Brown</option>
+        <option value="David Wilson">David Wilson</option>
+    </select>
+    <p id="output"></p>
+
+    <script>
+        const names = ['Alice', 'Bob', 'Charlie', 'David', 'Amanda', 'Brian', 'Catherine'];
+        const select = document.getElementById('nameFilter');
+const output = document.getElementById('output');
+
+select.addEventListener('change', () => {
+    const selectedValue = select.value;
+
+    output.textContent = selectedValue ? `You selected: ${selectedValue}` : 'No name selected';
+});
+    </script>
+</body>
+</html>

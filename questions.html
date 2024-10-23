@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    let max = 3000;
+    let min = 1000;
+
+    function delay(time) {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve()
+            }, time)
+        })
+    }
+
+    async function sequenceDelayedCounting(limit = 5) {
+
+        for (let i = 0; i < limit; i++) {
+            let randomDelay = getRandomDelay();
+
+            console.log(`Waiting ${randomDelay}ms before logging ${i}`);
+
+            await delay(randomDelay)
+
+            console.log(`counter:${i}`);
+        }
+    }
+
+
+
+    function getRandomDelay() {
+        return Math.floor(Math.random() * (max - min) + min)
+    }
+
+    sequenceDelayedCounting(6)
+
+</script>
